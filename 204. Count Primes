@@ -1,0 +1,14 @@
+def countPrimes(n):
+	prime = []
+	for x in range(2, n + 1):
+		is_Prime = True
+		for y in range(2, int(x**0.5)+1):
+			if x % y == 0:
+				is_Prime = False
+		if is_Prime:
+			prime.append(x)
+	return len(prime)
+
+
+n = 2
+print(countPrimes(n))
