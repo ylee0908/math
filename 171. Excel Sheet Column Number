@@ -1,0 +1,11 @@
+https://leetcode.com/problems/excel-sheet-column-number/
+
+def titleToNumber(s):
+    res = 0
+    for i in s:
+        res = res*26 + ord(i)-ord('A')+1
+    return res
+
+s = 'ABC'
+
+print(titleToNumber(s))
