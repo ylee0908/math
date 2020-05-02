@@ -1,14 +1,10 @@
-def countPrimes(n):
-	prime = []
-	for x in range(2, n + 1):
-		is_Prime = True
-		for y in range(2, int(x**0.5)+1):
-			if x % y == 0:
-				is_Prime = False
-		if is_Prime:
-			prime.append(x)
-	return len(prime)
+https://leetcode.com/problems/count-primes/
 
-
-n = 2
-print(countPrimes(n))
+def countPrimes(self, n: int) -> int:
+        count, sieve = 0, [True] * n
+        for i in range(2, n):
+            if sieve[i]:
+                count+=1
+                for j in range(i*i, n, i):
+                    sieve[j] = False
+        return count
